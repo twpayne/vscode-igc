@@ -164,6 +164,18 @@
                             "name": "string.quoted.igc"
                         }
                     }
+                },
+                {
+                    "name": "record.l.igc",
+                    "match": "^(L)(.*)$",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.igc"
+                        },
+                        "2": {
+                            "name": "comment.igc"
+                        }
+                    }
                 }
             ]
         }

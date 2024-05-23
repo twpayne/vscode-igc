@@ -88,6 +88,14 @@ tmlanguagespec: #TMLanguageSpec & {
 						"22": {name: capture2}
 					}
 				},
+				{
+					name: "record.l.igc"
+					match: "^(L)(.*)$"
+					captures: {
+						"1": {name: capture1}
+						"2": {name: "comment.igc"}
+					}
+				}
 			]
 		}
 	}
