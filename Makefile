@@ -1,5 +1,5 @@
 syntaxes/igc.tmLanguage.json: igc.tmLanguage.cue tmlanguage.cue
-	cue export -f -o $@ $+
+	cue export -e tmlanguagespec -f -o $@ $+
 
 .PHONY: fmt
 fmt:
