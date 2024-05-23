@@ -38,7 +38,7 @@
                             "name": "storage.type.igc"
                         },
                         "4": {
-                            "name": "enity.name.igc"
+                            "name": "entity.name.igc"
                         },
                         "5": {
                             "name": "string.quoted.igc"
@@ -65,7 +65,7 @@
                             "name": "storage.type.igc"
                         },
                         "4": {
-                            "name": "enity.name.igc"
+                            "name": "entity.name.igc"
                         },
                         "5": {
                             "name": "invalid.igc"
@@ -86,9 +86,81 @@
                             "name": "storage.type.igc"
                         },
                         "4": {
-                            "name": "enity.name.igc"
+                            "name": "entity.name.igc"
                         },
                         "5": {
+                            "name": "string.quoted.igc"
+                        }
+                    }
+                },
+                {
+                    "name": "record.b.igc",
+                    "match": "^(B)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])([AV])(\\d{5}|-\\d{4})(\\d{5}|-\\d{4})(.*)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.igc"
+                        },
+                        "2": {
+                            "name": "string.quoted.igc"
+                        },
+                        "3": {
+                            "name": "storage.type.igc"
+                        },
+                        "4": {
+                            "name": "entity.name.igc"
+                        },
+                        "5": {
+                            "name": "string.quoted.igc"
+                        },
+                        "6": {
+                            "name": "storage.type.igc"
+                        },
+                        "7": {
+                            "name": "entity.name.igc"
+                        },
+                        "8": {
+                            "name": "variable.name.igc"
+                        },
+                        "9": {
+                            "name": "string.quoted.igc"
+                        },
+                        "10": {
+                            "name": "storage.type.igc"
+                        },
+                        "11": {
+                            "name": "entity.name.igc"
+                        },
+                        "12": {
+                            "name": "variable.name.igc"
+                        },
+                        "13": {
+                            "name": "string.quoted.igc"
+                        },
+                        "14": {
+                            "name": "storage.type.igc"
+                        },
+                        "15": {
+                            "name": "entity.name.igc"
+                        },
+                        "16": {
+                            "name": "variable.name.igc"
+                        },
+                        "17": {
+                            "name": "string.quoted.igc"
+                        },
+                        "18": {
+                            "name": "storage.type.igc"
+                        },
+                        "19": {
+                            "name": "entity.name.igc"
+                        },
+                        "20": {
+                            "name": "variable.name.igc"
+                        },
+                        "21": {
+                            "name": "keyword.control.igc"
+                        },
+                        "22": {
                             "name": "string.quoted.igc"
                         }
                     }
