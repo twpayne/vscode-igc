@@ -1,0 +1,25 @@
+{
+  "name": "vscode-igc",
+  "displayName": "vscode-igc",
+  "description": "IGC support for VSCode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "igc",
+      "aliases": ["IGC", "igc"],
+      "extensions": [".igc"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "igc",
+      "scopeName": "source.igc",
+      "path": "./syntaxes/igc.tmLanguage.json"
+    }]
+  }
+}
