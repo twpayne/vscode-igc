@@ -3,7 +3,7 @@ capture2: "string.quoted.igc"
 capture3: "storage.type.igc"
 capture4: "entity.name.igc"
 capture5: "variable.name.igc"
-invalid: "invalid.igc"
+invalid:  "invalid.igc"
 
 tmlanguagespec: #TMLanguageSpec & {
 	$schema: "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json"
@@ -61,7 +61,7 @@ tmlanguagespec: #TMLanguageSpec & {
 					}
 				},
 				{
-					name: "record.b.igc"
+					name:  "record.b.igc"
 					match: "^(B)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])([AV])(\\d{5}|-\\d{4})(\\d{5}|-\\d{4})(.*)"
 					captures: {
 						"1": {name: capture1}
@@ -89,13 +89,13 @@ tmlanguagespec: #TMLanguageSpec & {
 					}
 				},
 				{
-					name: "record.l.igc"
+					name:  "record.l.igc"
 					match: "^(L)(.*)$"
 					captures: {
 						"1": {name: capture1}
 						"2": {name: "comment.igc"}
 					}
-				}
+				},
 			]
 		}
 	}
