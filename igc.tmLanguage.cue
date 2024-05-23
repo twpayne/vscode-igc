@@ -89,6 +89,14 @@ tmlanguagespec: #TMLanguageSpec & {
 					}
 				},
 				{
+					name:  "record.g.igc"
+					match: "^(G)(.*)$"
+					captures: {
+						"1": {name: capture1}
+						"2": {name: capture2}
+					}
+				},
+				{
 					name:  "record.l.igc"
 					match: "^(L)(.*)$"
 					captures: {
