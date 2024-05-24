@@ -1,5 +1,6 @@
 {
   "name": "vscode-igc",
+  "repository": "https://github.com/twpayne/vscode-igc",
   "displayName": "vscode-igc",
   "description": "IGC support for VSCode",
   "version": "0.0.1",
