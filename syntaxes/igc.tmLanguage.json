@@ -79,6 +79,84 @@
                     }
                 },
                 {
+                    "name": "record.c.line1.igc",
+                    "match": "^(C)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{4})(\\d{2})(.*)$",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.igc"
+                        },
+                        "2": {
+                            "name": "variable.name.igc"
+                        },
+                        "3": {
+                            "name": "entity.name.igc"
+                        },
+                        "4": {
+                            "name": "storage.type.igc"
+                        },
+                        "5": {
+                            "name": "storage.type.igc"
+                        },
+                        "6": {
+                            "name": "entity.name.igc"
+                        },
+                        "7": {
+                            "name": "variable.name.igc"
+                        },
+                        "8": {
+                            "name": "variable.name.igc"
+                        },
+                        "9": {
+                            "name": "entity.name.igc"
+                        },
+                        "10": {
+                            "name": "storage.type.igc"
+                        },
+                        "11": {
+                            "name": "string.quoted.igc"
+                        },
+                        "12": {
+                            "name": "storage.type.igc"
+                        }
+                    }
+                },
+                {
+                    "name": "record.c.point.igc",
+                    "match": "^(C)(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])(.*)$",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.igc"
+                        },
+                        "2": {
+                            "name": "storage.type.igc"
+                        },
+                        "3": {
+                            "name": "entity.name.igc"
+                        },
+                        "4": {
+                            "name": "variable.name.igc"
+                        },
+                        "5": {
+                            "name": "string.quoted.igc"
+                        },
+                        "6": {
+                            "name": "storage.type.igc"
+                        },
+                        "7": {
+                            "name": "entity.name.igc"
+                        },
+                        "8": {
+                            "name": "variable.name.igc"
+                        },
+                        "9": {
+                            "name": "string.quoted.igc"
+                        },
+                        "10": {
+                            "name": "string.quoted.igc"
+                        }
+                    }
+                },
+                {
                     "name": "record.h.hfdte.igc",
                     "match": "^(H)(F)(DTE)(\\d\\d)(\\d\\d)(\\d\\d)(.*)$",
                     "captures": {

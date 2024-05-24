@@ -55,6 +55,28 @@ tmlanguagespec: #TMLanguageSpec & {
 					}
 				},
 				{
+					name:  "record.c.line1.igc"
+					match: "^(C)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{4})(\\d{2})(.*)$"
+					captures: {
+						for i, value in ["header", "day", "month", "year", "hour", "minute", "second", "day", "month", "year", "1", "2"] {
+							"\(i+1)": {
+								name: names[value]
+							}
+						}
+					}
+				},
+				{
+					name:  "record.c.point.igc"
+					match: "^(C)(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])(.*)$"
+					captures: {
+						for i, value in ["header", "degree", "minute", "milliminute", "hemisphere", "degree", "minute", "milliminute", "hemisphere", "1"] {
+							"\(i+1)": {
+								name: names[value]
+							}
+						}
+					}
+				},
+				{
 					name:  "record.h.hfdte.igc"
 					match: "^(H)(F)(DTE)(\\d\\d)(\\d\\d)(\\d\\d)(.*)$"
 					captures: {
