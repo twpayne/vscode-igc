@@ -91,13 +91,14 @@ tmlanguagespec: #TMLanguageSpec & {
 				},
 				{
 					name:  "record.h.igc"
-					match: "^(H)(.)([0-9A-Z]{3})(.*?):(.*)$"
+					match: "^(H)(.)([0-9A-Z]{3})([^:]*)(:)?(.*)$"
 					captures: {
 						"1": color1
 						"2": color2
 						"3": color3
 						"4": color4
 						"5": color2
+						"6": color3
 					}
 				},
 				{
