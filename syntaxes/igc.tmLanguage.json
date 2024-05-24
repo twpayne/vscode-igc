@@ -245,12 +245,15 @@
                 },
                 {
                     "name": "record.l.igc",
-                    "match": "^(L)(.*)$",
+                    "match": "^(L)(...)(.*)$",
                     "captures": {
                         "1": {
                             "name": "keyword.control.igc"
                         },
                         "2": {
+                            "name": "string.quoted.igc"
+                        },
+                        "3": {
                             "name": "comment.igc"
                         }
                     }

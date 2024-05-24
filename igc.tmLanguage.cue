@@ -122,9 +122,9 @@ tmlanguagespec: #TMLanguageSpec & {
 				},
 				{
 					name:  "record.l.igc"
-					match: "^(L)(.*)$"
+					match: "^(L)(...)(.*)$"
 					captures: {
-						for i, value in ["header", "comment"] {
+						for i, value in ["header", "1", "comment"] {
 							"\(i+1)": {
 								name: names[value]
 							}
