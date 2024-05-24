@@ -34,9 +34,9 @@ tmlanguagespec: #TMLanguageSpec & {
 			patterns: [
 				{
 					name:  "record.a.igc"
-					match: "^(A)(...)(.*)$"
+					match: "^(A)(...)([^\\-]*)(-.*)?$"
 					captures: {
-						for i, value in ["header", "1", "2"] {
+						for i, value in ["header", "1", "2", "3"] {
 							"\(i+1)": {
 								name: names[value]
 							}

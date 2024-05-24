@@ -11,7 +11,7 @@
             "patterns": [
                 {
                     "name": "record.a.igc",
-                    "match": "^(A)(...)(.*)$",
+                    "match": "^(A)(...)([^\\-]*)(-.*)?$",
                     "captures": {
                         "1": {
                             "name": "keyword.control.igc"
@@ -21,6 +21,9 @@
                         },
                         "3": {
                             "name": "storage.type.igc"
+                        },
+                        "4": {
+                            "name": "entity.name.igc"
                         }
                     }
                 },
