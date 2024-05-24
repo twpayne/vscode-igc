@@ -1,2 +1,2 @@
-# Set default behavior to automatically normalize line endings.
-* text=auto
+*.IGC text eol=crlf
+*.igc text eol=crlf
