@@ -120,22 +120,13 @@ tmlanguagespec: #TMLanguageSpec & {
 						}
 					}
 				},
-				{
+				ijrecord & {
 					name:  "record.i.igc"
 					begin: "^(I)(\\d{2})"
-					beginCaptures: {
-						for i, value in ["header", "1"] {
-							"\(i+1)": {
-								name: names[value]
-							}
-						}
-					}
-					patterns: [
-						{
-							include: "#ifields"
-						},
-					]
-					end: "$"
+				},
+				ijrecord & {
+					name:  "record.j.igc"
+					begin: "^(J)(\\d{2})"
 				},
 				{
 					name:  "record.l.igc"
@@ -150,20 +141,29 @@ tmlanguagespec: #TMLanguageSpec & {
 				},
 			]
 		}
-		ifields:
-			patterns: [
-				{
-					name:  "record.i.field.igc"
-					match: "(\\d{2})(\\d{2})(.{3})"
-					captures: {
-						for i, value in ["1", "2", "3"] {
-							"\(i+1)": {
-								name: names[value]
-							}
-						}
-					}
-				},
-			]
 	}
 	scopeName: "source.igc"
+}
+
+ijrecord: {
+	beginCaptures: {
+		for i, value in ["header", "1"] {
+			"\(i+1)": {
+				name: names[value]
+			}
+		}
+	}
+	patterns: [
+		{
+			match: "(\\d{2})(\\d{2})(.{3})"
+			captures: {
+				for i, value in ["2", "3", "4"] {
+					"\(i+1)": {
+						name: names[value]
+					}
+				}
+			}
+		},
+	]
+	end: "$"
 }
