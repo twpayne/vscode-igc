@@ -9,10 +9,6 @@ files](https://www.fai.org/sites/default/files/igc_fr_specification_2020-11-25_w
 * Support for all record types.
 * Visual distinction between adjacent positional fields.
 
-## Known Issues
-
-See [TODO.md](TODO.md).
-
 ## Release Notes
 
 ### 0.0.1
