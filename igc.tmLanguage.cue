@@ -129,6 +129,17 @@ tmlanguagespec: #TMLanguageSpec & {
 					begin: "^(J)(\\d{2})"
 				},
 				{
+					name:  "record.k.igc"
+					match: "^(K)(.*)$"
+					captures: {
+						for i, value in ["header", "1"] {
+							"\(i+1)": {
+								name: names[value]
+							}
+						}
+					}
+				},
+				{
 					name:  "record.l.igc"
 					match: "^(L)(...)(.*)$"
 					captures: {

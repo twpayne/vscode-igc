@@ -302,6 +302,18 @@
                     "begin": "^(J)(\\d{2})"
                 },
                 {
+                    "name": "record.k.igc",
+                    "match": "^(K)(.*)$",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.igc"
+                        },
+                        "2": {
+                            "name": "string.quoted.igc"
+                        }
+                    }
+                },
+                {
                     "name": "record.l.igc",
                     "match": "^(L)(...)(.*)$",
                     "captures": {
