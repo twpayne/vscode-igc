@@ -17,13 +17,13 @@
                             "name": "keyword.control.igc"
                         },
                         "2": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         },
                         "3": {
                             "name": "storage.type.igc"
                         },
                         "4": {
-                            "name": "entity.name.igc"
+                            "name": "string.quoted.igc"
                         }
                     }
                 },
@@ -38,7 +38,7 @@
                             "name": "storage.type.igc"
                         },
                         "3": {
-                            "name": "entity.name.igc"
+                            "name": "string.quoted.igc"
                         },
                         "4": {
                             "name": "variable.name.igc"
@@ -47,34 +47,34 @@
                             "name": "storage.type.igc"
                         },
                         "6": {
-                            "name": "entity.name.igc"
+                            "name": "string.quoted.igc"
                         },
                         "7": {
                             "name": "variable.name.igc"
                         },
                         "8": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         },
                         "9": {
                             "name": "storage.type.igc"
                         },
                         "10": {
-                            "name": "entity.name.igc"
+                            "name": "string.quoted.igc"
                         },
                         "11": {
                             "name": "variable.name.igc"
                         },
                         "12": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         },
                         "13": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         },
                         "14": {
                             "name": "storage.type.igc"
                         },
                         "15": {
-                            "name": "entity.name.igc"
+                            "name": "string.quoted.igc"
                         },
                         "16": {
                             "name": "variable.name.igc"
@@ -92,7 +92,7 @@
                             "name": "variable.name.igc"
                         },
                         "3": {
-                            "name": "entity.name.igc"
+                            "name": "string.quoted.igc"
                         },
                         "4": {
                             "name": "storage.type.igc"
@@ -101,7 +101,7 @@
                             "name": "storage.type.igc"
                         },
                         "6": {
-                            "name": "entity.name.igc"
+                            "name": "string.quoted.igc"
                         },
                         "7": {
                             "name": "variable.name.igc"
@@ -110,13 +110,13 @@
                             "name": "variable.name.igc"
                         },
                         "9": {
-                            "name": "entity.name.igc"
+                            "name": "string.quoted.igc"
                         },
                         "10": {
                             "name": "storage.type.igc"
                         },
                         "11": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         },
                         "12": {
                             "name": "storage.type.igc"
@@ -134,28 +134,28 @@
                             "name": "storage.type.igc"
                         },
                         "3": {
-                            "name": "entity.name.igc"
+                            "name": "string.quoted.igc"
                         },
                         "4": {
                             "name": "variable.name.igc"
                         },
                         "5": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         },
                         "6": {
                             "name": "storage.type.igc"
                         },
                         "7": {
-                            "name": "entity.name.igc"
+                            "name": "string.quoted.igc"
                         },
                         "8": {
                             "name": "variable.name.igc"
                         },
                         "9": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         },
                         "10": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         }
                     }
                 },
@@ -167,7 +167,7 @@
                             "name": "keyword.control.igc"
                         },
                         "2": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         },
                         "3": {
                             "name": "storage.type.igc"
@@ -176,7 +176,7 @@
                             "name": "variable.name.igc"
                         },
                         "5": {
-                            "name": "entity.name.igc"
+                            "name": "string.quoted.igc"
                         },
                         "6": {
                             "name": "storage.type.igc"
@@ -194,13 +194,13 @@
                             "name": "keyword.control.igc"
                         },
                         "2": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         },
                         "3": {
                             "name": "storage.type.igc"
                         },
                         "4": {
-                            "name": "entity.name.igc"
+                            "name": "string.quoted.igc"
                         },
                         "5": {
                             "name": "invalid.igc"
@@ -215,13 +215,13 @@
                             "name": "keyword.control.igc"
                         },
                         "2": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         },
                         "3": {
                             "name": "storage.type.igc"
                         },
                         "4": {
-                            "name": "entity.name.igc"
+                            "name": "string.quoted.igc"
                         },
                         "5": {
                             "name": "variable.name.igc"
@@ -239,7 +239,7 @@
                             "name": "keyword.control.igc"
                         },
                         "2": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         }
                     }
                 },
@@ -250,7 +250,7 @@
                             "name": "keyword.control.igc"
                         },
                         "2": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         }
                     },
                     "patterns": [
@@ -261,7 +261,7 @@
                                     "name": "storage.type.igc"
                                 },
                                 "2": {
-                                    "name": "entity.name.igc"
+                                    "name": "string.quoted.igc"
                                 },
                                 "3": {
                                     "name": "variable.name.igc"
@@ -279,7 +279,7 @@
                             "name": "keyword.control.igc"
                         },
                         "2": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         }
                     },
                     "patterns": [
@@ -290,7 +290,7 @@
                                     "name": "storage.type.igc"
                                 },
                                 "2": {
-                                    "name": "entity.name.igc"
+                                    "name": "string.quoted.igc"
                                 },
                                 "3": {
                                     "name": "variable.name.igc"
@@ -309,7 +309,7 @@
                             "name": "keyword.control.igc"
                         },
                         "2": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         }
                     }
                 },
@@ -321,7 +321,7 @@
                             "name": "keyword.control.igc"
                         },
                         "2": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         },
                         "3": {
                             "name": "comment.igc"

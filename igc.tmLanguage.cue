@@ -15,9 +15,9 @@ names: {
 	"minute": names["3"]
 	"second": names["4"]
 
-	"1": "string.quoted.igc"
+	"1": "entity.name.igc"
 	"2": "storage.type.igc"
-	"3": "entity.name.igc"
+	"3": "string.quoted.igc"
 	"4": "variable.name.igc"
 }
 
