@@ -26,43 +26,43 @@
                 },
                 {
                     "name": "record.b.igc",
-                    "match": "^(B)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])([AV])(\\d{5}|-\\d{4})(\\d{5}|-\\d{4})(.*)",
+                    "match": "^(B)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])([AV])(\\d{5}|-\\d{4})(\\d{5}|-\\d{4})(.*)$",
                     "captures": {
                         "1": {
                             "name": "keyword.control.igc"
                         },
                         "2": {
-                            "name": "string.quoted.igc"
+                            "name": "storage.type.igc"
                         },
                         "3": {
-                            "name": "storage.type.igc"
+                            "name": "entity.name.igc"
                         },
                         "4": {
-                            "name": "entity.name.igc"
+                            "name": "variable.name.igc"
                         },
                         "5": {
-                            "name": "string.quoted.igc"
+                            "name": "storage.type.igc"
                         },
                         "6": {
-                            "name": "storage.type.igc"
+                            "name": "entity.name.igc"
                         },
                         "7": {
-                            "name": "entity.name.igc"
+                            "name": "variable.name.igc"
                         },
                         "8": {
-                            "name": "variable.name.igc"
-                        },
-                        "9": {
                             "name": "string.quoted.igc"
                         },
-                        "10": {
+                        "9": {
                             "name": "storage.type.igc"
                         },
-                        "11": {
+                        "10": {
                             "name": "entity.name.igc"
                         },
-                        "12": {
+                        "11": {
                             "name": "variable.name.igc"
+                        },
+                        "12": {
+                            "name": "string.quoted.igc"
                         },
                         "13": {
                             "name": "string.quoted.igc"
@@ -75,24 +75,6 @@
                         },
                         "16": {
                             "name": "variable.name.igc"
-                        },
-                        "17": {
-                            "name": "string.quoted.igc"
-                        },
-                        "18": {
-                            "name": "storage.type.igc"
-                        },
-                        "19": {
-                            "name": "entity.name.igc"
-                        },
-                        "20": {
-                            "name": "variable.name.igc"
-                        },
-                        "21": {
-                            "name": "keyword.control.igc"
-                        },
-                        "22": {
-                            "name": "string.quoted.igc"
                         }
                     }
                 },
@@ -110,10 +92,10 @@
                             "name": "storage.type.igc"
                         },
                         "4": {
-                            "name": "entity.name.igc"
+                            "name": "variable.name.igc"
                         },
                         "5": {
-                            "name": "string.quoted.igc"
+                            "name": "entity.name.igc"
                         },
                         "6": {
                             "name": "storage.type.igc"
@@ -161,7 +143,7 @@
                             "name": "entity.name.igc"
                         },
                         "5": {
-                            "name": "string.quoted.igc"
+                            "name": "variable.name.igc"
                         },
                         "6": {
                             "name": "storage.type.igc"
