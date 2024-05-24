@@ -160,6 +160,40 @@
                     }
                 },
                 {
+                    "name": "record.f.igc",
+                    "begin": "^(F)(\\d{2})",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control.igc"
+                        },
+                        "2": {
+                            "name": "entity.name.igc"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "match": "(\\d{2})(\\d{2})",
+                            "captures": {
+                                "1": {
+                                    "name": "storage.type.igc"
+                                },
+                                "2": {
+                                    "name": "string.quoted.igc"
+                                }
+                            }
+                        },
+                        {
+                            "match": "(\\d{2})",
+                            "captures": {
+                                "1": {
+                                    "name": "storage.type.igc"
+                                }
+                            }
+                        }
+                    ],
+                    "end": "$"
+                },
+                {
                     "name": "record.h.hfdte.igc",
                     "match": "^(H)(F)(DTE)(\\d\\d)(\\d\\d)(\\d\\d)(.*)$",
                     "captures": {

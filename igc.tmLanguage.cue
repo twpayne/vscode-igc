@@ -77,6 +77,40 @@ tmlanguagespec: #TMLanguageSpec & {
 					}
 				},
 				{
+					name:  "record.f.igc"
+					begin: "^(F)(\\d{2})"
+					beginCaptures: {
+						for i, value in ["header", "1"] {
+							"\(i+1)": {
+								name: names[value]
+							}
+						}
+					}
+					patterns: [
+						{
+							match: "(\\d{2})(\\d{2})"
+							captures: {
+								for i, value in ["2", "3"] {
+									"\(i+1)": {
+										name: names[value]
+									}
+								}
+							}
+						},
+						{
+							match: "(\\d{2})"
+							captures: {
+								for i, value in ["2"] {
+									"\(i+1)": {
+										name: names[value]
+									}
+								}
+							}
+						},
+					]
+					end: "$"
+				},
+				{
 					name:  "record.h.hfdte.igc"
 					match: "^(H)(F)(DTE)(\\d\\d)(\\d\\d)(\\d\\d)(.*)$"
 					captures: {
