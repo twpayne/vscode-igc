@@ -121,6 +121,23 @@ tmlanguagespec: #TMLanguageSpec & {
 					}
 				},
 				{
+					name:  "record.i.igc"
+					begin: "^(I)(\\d{2})"
+					beginCaptures: {
+						for i, value in ["header", "1"] {
+							"\(i+1)": {
+								name: names[value]
+							}
+						}
+					}
+					patterns: [
+						{
+							include: "#ifields"
+						},
+					]
+					end: "$"
+				},
+				{
 					name:  "record.l.igc"
 					match: "^(L)(...)(.*)$"
 					captures: {
@@ -133,6 +150,20 @@ tmlanguagespec: #TMLanguageSpec & {
 				},
 			]
 		}
+		ifields:
+			patterns: [
+				{
+					name:  "record.i.field.igc"
+					match: "(\\d{2})(\\d{2})(.{3})"
+					captures: {
+						for i, value in ["1", "2", "3"] {
+							"\(i+1)": {
+								name: names[value]
+							}
+						}
+					}
+				},
+			]
 	}
 	scopeName: "source.igc"
 }

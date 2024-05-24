@@ -2,6 +2,6 @@
 * [ ] Cycle colors in comma-separated values like `HFGPS`
 * [ ] Add `F` record support
 * [ ] Colorize G record according to validity (maybe using [go-vali](https://github.com/twpayne/go-vali))
-* [ ] Add `I` record support (maybe using [syntax highlighting](https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide) to highlight extra fields in `B` records)
 * [ ] Add `J` record support
 * [ ] Add `K` record support
+* [ ] Maybe use [syntax highlighting](https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide) to highlight extra fields in `B` records
