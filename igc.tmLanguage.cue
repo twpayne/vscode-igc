@@ -77,6 +77,17 @@ tmlanguagespec: #TMLanguageSpec & {
 					}
 				},
 				{
+					name:  "record.e.igc"
+					match: "^(E)(\\d{2})(\\d{2})(\\d{2})(.{3})(.*)$"
+					captures: {
+						for i, value in ["header", "hour", "minute", "second", "1", "2"] {
+							"\(i+1)": {
+								name: names[value]
+							}
+						}
+					}
+				},
+				{
 					name:  "record.f.igc"
 					begin: "^(F)(\\d{2})"
 					beginCaptures: {

@@ -160,6 +160,30 @@
                     }
                 },
                 {
+                    "name": "record.e.igc",
+                    "match": "^(E)(\\d{2})(\\d{2})(\\d{2})(.{3})(.*)$",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.igc"
+                        },
+                        "2": {
+                            "name": "storage.type.igc"
+                        },
+                        "3": {
+                            "name": "string.quoted.igc"
+                        },
+                        "4": {
+                            "name": "variable.name.igc"
+                        },
+                        "5": {
+                            "name": "entity.name.igc"
+                        },
+                        "6": {
+                            "name": "storage.type.igc"
+                        }
+                    }
+                },
+                {
                     "name": "record.f.igc",
                     "begin": "^(F)(\\d{2})",
                     "beginCaptures": {
