@@ -11,7 +11,7 @@
             "patterns": [
                 {
                     "name": "record.a.igc",
-                    "match": "^(A)(...)([^\\-]*)(-.*)?$",
+                    "match": "^(A)([A-Z]{3})([^\\-]*)(-.*)?$",
                     "captures": {
                         "1": {
                             "name": "keyword.control.igc"
@@ -213,13 +213,21 @@
                                     "name": "storage.type.igc"
                                 }
                             }
+                        },
+                        {
+                            "match": "(.*)",
+                            "captures": {
+                                "1": {
+                                    "name": "invalid.igc"
+                                }
+                            }
                         }
                     ],
                     "end": "$"
                 },
                 {
                     "name": "record.h.hfdte.igc",
-                    "match": "^(H)(F)(DTE)(\\d\\d)(\\d\\d)(\\d\\d)(.*)$",
+                    "match": "^(H)(F)(DTE)(\\d{2})(\\d{2})(\\d{2})(.*)$",
                     "captures": {
                         "1": {
                             "name": "keyword.control.igc"
@@ -267,7 +275,7 @@
                 },
                 {
                     "name": "record.h.igc",
-                    "match": "^(H)(.)([0-9A-Z]{3})([^:]*)(:)?(.*)$",
+                    "match": "^(H)([FO])([0-9A-Z]{3})([^:]*)(:)?(.*)$",
                     "captures": {
                         "1": {
                             "name": "keyword.control.igc"
@@ -313,7 +321,7 @@
                     },
                     "patterns": [
                         {
-                            "match": "(\\d{2})(\\d{2})(.{3})",
+                            "match": "(\\d{2})(\\d{2})([A-Z]{3})",
                             "captures": {
                                 "1": {
                                     "name": "storage.type.igc"
@@ -323,6 +331,14 @@
                                 },
                                 "3": {
                                     "name": "variable.name.igc"
+                                }
+                            }
+                        },
+                        {
+                            "match": "(.*)",
+                            "captures": {
+                                "1": {
+                                    "name": "invalid.igc"
                                 }
                             }
                         }
@@ -342,7 +358,7 @@
                     },
                     "patterns": [
                         {
-                            "match": "(\\d{2})(\\d{2})(.{3})",
+                            "match": "(\\d{2})(\\d{2})([A-Z]{3})",
                             "captures": {
                                 "1": {
                                     "name": "storage.type.igc"
@@ -352,6 +368,14 @@
                                 },
                                 "3": {
                                     "name": "variable.name.igc"
+                                }
+                            }
+                        },
+                        {
+                            "match": "(.*)",
+                            "captures": {
+                                "1": {
+                                    "name": "invalid.igc"
                                 }
                             }
                         }
@@ -373,7 +397,7 @@
                 },
                 {
                     "name": "record.l.igc",
-                    "match": "^(L)(...)(.*)$",
+                    "match": "^(L)([A-Z]{3})(.*)$",
                     "captures": {
                         "1": {
                             "name": "keyword.control.igc"

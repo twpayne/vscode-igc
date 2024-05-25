@@ -34,7 +34,7 @@ tmlanguagespec: #TMLanguageSpec & {
 			patterns: [
 				{
 					name:  "record.a.igc"
-					match: "^(A)(...)([^\\-]*)(-.*)?$"
+					match: "^(A)([A-Z]{3})([^\\-]*)(-.*)?$"
 					captures: {
 						for i, value in ["header", "1", "2", "3"] {
 							"\(i+1)": names[value]
@@ -102,12 +102,20 @@ tmlanguagespec: #TMLanguageSpec & {
 								}
 							}
 						},
+						{
+							match: "(.*)"
+							captures: {
+								for i, value in ["invalid"] {
+									"\(i+1)": names[value]
+								}
+							}
+						},
 					]
 					end: "$"
 				},
 				{
 					name:  "record.h.hfdte.igc"
-					match: "^(H)(F)(DTE)(\\d\\d)(\\d\\d)(\\d\\d)(.*)$"
+					match: "^(H)(F)(DTE)(\\d{2})(\\d{2})(\\d{2})(.*)$"
 					captures: {
 						for i, value in ["header", "1", "2", "day", "month", "year", "invalid"] {
 							"\(i+1)": names[value]
@@ -125,7 +133,7 @@ tmlanguagespec: #TMLanguageSpec & {
 				},
 				{
 					name:  "record.h.igc"
-					match: "^(H)(.)([0-9A-Z]{3})([^:]*)(:)?(.*)$"
+					match: "^(H)([FO])([0-9A-Z]{3})([^:]*)(:)?(.*)$"
 					captures: {
 						for i, value in ["header", "1", "2", "3", "4", "2"] {
 							"\(i+1)": names[value]
@@ -160,7 +168,7 @@ tmlanguagespec: #TMLanguageSpec & {
 				},
 				{
 					name:  "record.l.igc"
-					match: "^(L)(...)(.*)$"
+					match: "^(L)([A-Z]{3})(.*)$"
 					captures: {
 						for i, value in ["header", "1", "comment"] {
 							"\(i+1)": names[value]
@@ -190,9 +198,17 @@ ijrecord: {
 	}
 	patterns: [
 		{
-			match: "(\\d{2})(\\d{2})(.{3})"
+			match: "(\\d{2})(\\d{2})([A-Z]{3})"
 			captures: {
 				for i, value in ["2", "3", "4"] {
+					"\(i+1)": names[value]
+				}
+			}
+		},
+		{
+			match: "(.*)"
+			captures: {
+				for i, value in ["invalid"] {
 					"\(i+1)": names[value]
 				}
 			}
