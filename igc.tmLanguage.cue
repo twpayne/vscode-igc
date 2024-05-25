@@ -1,7 +1,7 @@
 names: {
-	"header":  "keyword.control.igc"
-	"comment": "comment.igc"
-	"invalid": "invalid.igc"
+	"header": {name: "keyword.control.igc"}
+	"comment": {name: "comment.igc"}
+	"invalid": {name: "invalid.igc"}
 
 	"degree":      names["2"]
 	"minute":      names["3"]
@@ -15,10 +15,10 @@ names: {
 	"minute": names["3"]
 	"second": names["4"]
 
-	"1": "entity.name.igc"
-	"2": "storage.type.igc"
-	"3": "string.quoted.igc"
-	"4": "variable.name.igc"
+	"1": {name: "entity.name.igc"}
+	"2": {name: "storage.type.igc"}
+	"3": {name: "string.quoted.igc"}
+	"4": {name: "variable.name.igc"}
 }
 
 tmlanguagespec: #TMLanguageSpec & {
@@ -37,9 +37,7 @@ tmlanguagespec: #TMLanguageSpec & {
 					match: "^(A)(...)([^\\-]*)(-.*)?$"
 					captures: {
 						for i, value in ["header", "1", "2", "3"] {
-							"\(i+1)": {
-								name: names[value]
-							}
+							"\(i+1)": names[value]
 						}
 					}
 				},
@@ -48,9 +46,7 @@ tmlanguagespec: #TMLanguageSpec & {
 					match: "^(B)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])([AV])(\\d{5}|-\\d{4})(\\d{5}|-\\d{4})(.*)$"
 					captures: {
 						for i, value in ["header", "hour", "minute", "second", "degree", "minute", "milliminute", "hemisphere", "degree", "minute", "milliminute", "hemisphere", "1", "2", "3", "4"] {
-							"\(i+1)": {
-								name: names[value]
-							}
+							"\(i+1)": names[value]
 						}
 					}
 				},
@@ -59,9 +55,7 @@ tmlanguagespec: #TMLanguageSpec & {
 					match: "^(C)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{4})(\\d{2})(.*)$"
 					captures: {
 						for i, value in ["header", "day", "month", "year", "hour", "minute", "second", "day", "month", "year", "1", "2"] {
-							"\(i+1)": {
-								name: names[value]
-							}
+							"\(i+1)": names[value]
 						}
 					}
 				},
@@ -70,9 +64,7 @@ tmlanguagespec: #TMLanguageSpec & {
 					match: "^(C)(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])(.*)$"
 					captures: {
 						for i, value in ["header", "degree", "minute", "milliminute", "hemisphere", "degree", "minute", "milliminute", "hemisphere", "1"] {
-							"\(i+1)": {
-								name: names[value]
-							}
+							"\(i+1)": names[value]
 						}
 					}
 				},
@@ -81,9 +73,7 @@ tmlanguagespec: #TMLanguageSpec & {
 					match: "^(E)(\\d{2})(\\d{2})(\\d{2})(.{3})(.*)$"
 					captures: {
 						for i, value in ["header", "hour", "minute", "second", "1", "2"] {
-							"\(i+1)": {
-								name: names[value]
-							}
+							"\(i+1)": names[value]
 						}
 					}
 				},
@@ -92,9 +82,7 @@ tmlanguagespec: #TMLanguageSpec & {
 					begin: "^(F)(\\d{2})"
 					beginCaptures: {
 						for i, value in ["header", "1"] {
-							"\(i+1)": {
-								name: names[value]
-							}
+							"\(i+1)": names[value]
 						}
 					}
 					patterns: [
@@ -102,9 +90,7 @@ tmlanguagespec: #TMLanguageSpec & {
 							match: "(\\d{2})(\\d{2})"
 							captures: {
 								for i, value in ["2", "3"] {
-									"\(i+1)": {
-										name: names[value]
-									}
+									"\(i+1)": names[value]
 								}
 							}
 						},
@@ -112,9 +98,7 @@ tmlanguagespec: #TMLanguageSpec & {
 							match: "(\\d{2})"
 							captures: {
 								for i, value in ["2"] {
-									"\(i+1)": {
-										name: names[value]
-									}
+									"\(i+1)": names[value]
 								}
 							}
 						},
@@ -126,9 +110,7 @@ tmlanguagespec: #TMLanguageSpec & {
 					match: "^(H)(F)(DTE)(\\d\\d)(\\d\\d)(\\d\\d)(.*)$"
 					captures: {
 						for i, value in ["header", "1", "2", "day", "month", "year", "invalid"] {
-							"\(i+1)": {
-								name: names[value]
-							}
+							"\(i+1)": names[value]
 						}
 					}
 				},
@@ -137,9 +119,7 @@ tmlanguagespec: #TMLanguageSpec & {
 					match: "^(H)(F)(FXA)(\\d+)(.*)$"
 					captures: {
 						for i, value in ["header", "1", "2", "3", "invalid"] {
-							"\(i+1)": {
-								name: names[value]
-							}
+							"\(i+1)": names[value]
 						}
 					}
 				},
@@ -148,9 +128,7 @@ tmlanguagespec: #TMLanguageSpec & {
 					match: "^(H)(.)([0-9A-Z]{3})([^:]*)(:)?(.*)$"
 					captures: {
 						for i, value in ["header", "1", "2", "3", "4", "2"] {
-							"\(i+1)": {
-								name: names[value]
-							}
+							"\(i+1)": names[value]
 						}
 					}
 				},
@@ -159,9 +137,7 @@ tmlanguagespec: #TMLanguageSpec & {
 					match: "^(G)(.*)$"
 					captures: {
 						for i, value in ["header", "1"] {
-							"\(i+1)": {
-								name: names[value]
-							}
+							"\(i+1)": names[value]
 						}
 					}
 				},
@@ -178,9 +154,7 @@ tmlanguagespec: #TMLanguageSpec & {
 					match: "^(K)(.*)$"
 					captures: {
 						for i, value in ["header", "1"] {
-							"\(i+1)": {
-								name: names[value]
-							}
+							"\(i+1)": names[value]
 						}
 					}
 				},
@@ -189,17 +163,17 @@ tmlanguagespec: #TMLanguageSpec & {
 					match: "^(L)(...)(.*)$"
 					captures: {
 						for i, value in ["header", "1", "comment"] {
-							"\(i+1)": {
-								name: names[value]
-							}
+							"\(i+1)": names[value]
 						}
 					}
 				},
 				{
-					name: "record.invalid.igc",
-					match: "^(.*)$",
+					name:  "record.invalid.igc"
+					match: "^(.*)$"
 					captures: {
-						"1": name: names["invalid"]
+						for i, value in ["invalid"] {
+							"\(i+1)": names[value]
+						}
 					}
 				},
 			]
@@ -211,9 +185,7 @@ tmlanguagespec: #TMLanguageSpec & {
 ijrecord: {
 	beginCaptures: {
 		for i, value in ["header", "1"] {
-			"\(i+1)": {
-				name: names[value]
-			}
+			"\(i+1)": names[value]
 		}
 	}
 	patterns: [
@@ -221,9 +193,7 @@ ijrecord: {
 			match: "(\\d{2})(\\d{2})(.{3})"
 			captures: {
 				for i, value in ["2", "3", "4"] {
-					"\(i+1)": {
-						name: names[value]
-					}
+					"\(i+1)": names[value]
 				}
 			}
 		},
