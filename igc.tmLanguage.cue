@@ -195,6 +195,13 @@ tmlanguagespec: #TMLanguageSpec & {
 						}
 					}
 				},
+				{
+					name: "record.invalid.igc",
+					match: "^(.*)$",
+					captures: {
+						"1": name: names["invalid"]
+					}
+				},
 			]
 		}
 	}
