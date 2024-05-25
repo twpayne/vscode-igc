@@ -3,416 +3,397 @@
     "name": "IGC",
     "patterns": [
         {
-            "include": "#records"
+            "match": "^(A)([A-Z]{3})([^\\-]*)(-.*)?$",
+            "name": "record.a.igc",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "entity.name.igc"
+                },
+                "3": {
+                    "name": "storage.type.igc"
+                },
+                "4": {
+                    "name": "string.quoted.igc"
+                }
+            }
+        },
+        {
+            "match": "^(B)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])([AV])(\\d{5}|-\\d{4})(\\d{5}|-\\d{4})(.*)$",
+            "name": "record.b.igc",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "storage.type.igc"
+                },
+                "3": {
+                    "name": "string.quoted.igc"
+                },
+                "4": {
+                    "name": "variable.name.igc"
+                },
+                "5": {
+                    "name": "storage.type.igc"
+                },
+                "6": {
+                    "name": "string.quoted.igc"
+                },
+                "7": {
+                    "name": "variable.name.igc"
+                },
+                "8": {
+                    "name": "entity.name.igc"
+                },
+                "9": {
+                    "name": "storage.type.igc"
+                },
+                "10": {
+                    "name": "string.quoted.igc"
+                },
+                "11": {
+                    "name": "variable.name.igc"
+                },
+                "12": {
+                    "name": "entity.name.igc"
+                },
+                "13": {
+                    "name": "entity.name.igc"
+                },
+                "14": {
+                    "name": "storage.type.igc"
+                },
+                "15": {
+                    "name": "string.quoted.igc"
+                },
+                "16": {
+                    "name": "variable.name.igc"
+                }
+            }
+        },
+        {
+            "match": "^(C)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{4})(\\d{2})(.*)$",
+            "name": "record.c.line1.igc",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "variable.name.igc"
+                },
+                "3": {
+                    "name": "string.quoted.igc"
+                },
+                "4": {
+                    "name": "storage.type.igc"
+                },
+                "5": {
+                    "name": "storage.type.igc"
+                },
+                "6": {
+                    "name": "string.quoted.igc"
+                },
+                "7": {
+                    "name": "variable.name.igc"
+                },
+                "8": {
+                    "name": "variable.name.igc"
+                },
+                "9": {
+                    "name": "string.quoted.igc"
+                },
+                "10": {
+                    "name": "storage.type.igc"
+                },
+                "11": {
+                    "name": "entity.name.igc"
+                },
+                "12": {
+                    "name": "storage.type.igc"
+                }
+            }
+        },
+        {
+            "match": "^(C)(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])(.*)$",
+            "name": "record.c.point.igc",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "storage.type.igc"
+                },
+                "3": {
+                    "name": "string.quoted.igc"
+                },
+                "4": {
+                    "name": "variable.name.igc"
+                },
+                "5": {
+                    "name": "entity.name.igc"
+                },
+                "6": {
+                    "name": "storage.type.igc"
+                },
+                "7": {
+                    "name": "string.quoted.igc"
+                },
+                "8": {
+                    "name": "variable.name.igc"
+                },
+                "9": {
+                    "name": "entity.name.igc"
+                },
+                "10": {
+                    "name": "entity.name.igc"
+                }
+            }
+        },
+        {
+            "match": "^(E)(\\d{2})(\\d{2})(\\d{2})(.{3})(.*)$",
+            "name": "record.e.igc",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "storage.type.igc"
+                },
+                "3": {
+                    "name": "string.quoted.igc"
+                },
+                "4": {
+                    "name": "variable.name.igc"
+                },
+                "5": {
+                    "name": "entity.name.igc"
+                },
+                "6": {
+                    "name": "storage.type.igc"
+                }
+            }
+        },
+        {
+            "name": "record.f.igc",
+            "begin": "^(F)(\\d{2})",
+            "end": "$",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "entity.name.igc"
+                }
+            },
+            "patterns": [
+                {
+                    "match": "(\\d{2})(\\d{2})",
+                    "captures": {
+                        "1": {
+                            "name": "storage.type.igc"
+                        },
+                        "2": {
+                            "name": "string.quoted.igc"
+                        }
+                    }
+                },
+                {
+                    "match": "(\\d{2})",
+                    "captures": {
+                        "1": {
+                            "name": "storage.type.igc"
+                        }
+                    }
+                },
+                {
+                    "match": "(.*)",
+                    "captures": {
+                        "1": {
+                            "name": "invalid.igc"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "match": "^(G)(.*)$",
+            "name": "record.g.igc",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "entity.name.igc"
+                }
+            }
+        },
+        {
+            "match": "^(H)(F)(DTE)(\\d{2})(\\d{2})(\\d{2})(.*)$",
+            "name": "record.h.hfdte.igc",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "entity.name.igc"
+                },
+                "3": {
+                    "name": "storage.type.igc"
+                },
+                "4": {
+                    "name": "variable.name.igc"
+                },
+                "5": {
+                    "name": "string.quoted.igc"
+                },
+                "6": {
+                    "name": "storage.type.igc"
+                },
+                "7": {
+                    "name": "invalid.igc"
+                }
+            }
+        },
+        {
+            "match": "^(H)(F)(FXA)(\\d+)(.*)$",
+            "name": "record.h.hffxa.igc",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "entity.name.igc"
+                },
+                "3": {
+                    "name": "storage.type.igc"
+                },
+                "4": {
+                    "name": "string.quoted.igc"
+                },
+                "5": {
+                    "name": "invalid.igc"
+                }
+            }
+        },
+        {
+            "match": "^(H)([FO])([0-9A-Z]{3})([^:]*)(:)?(.*)$",
+            "name": "record.h.igc",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "entity.name.igc"
+                },
+                "3": {
+                    "name": "storage.type.igc"
+                },
+                "4": {
+                    "name": "string.quoted.igc"
+                },
+                "5": {
+                    "name": "variable.name.igc"
+                },
+                "6": {
+                    "name": "storage.type.igc"
+                }
+            }
+        },
+        {
+            "name": "record.i.igc",
+            "begin": "^(I)(\\d{2})",
+            "end": "$",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "entity.name.igc"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#ijFields"
+                }
+            ]
+        },
+        {
+            "name": "record.j.igc",
+            "begin": "^(J)(\\d{2})",
+            "end": "$",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "entity.name.igc"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#ijFields"
+                }
+            ]
+        },
+        {
+            "match": "^(K)(.*)$",
+            "name": "record.k.igc",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "entity.name.igc"
+                }
+            }
+        },
+        {
+            "match": "^(L)([A-Z]{3})(.*)$",
+            "name": "record.l.igc",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "entity.name.igc"
+                },
+                "3": {
+                    "name": "comment.igc"
+                }
+            }
+        },
+        {
+            "name": "record.invalid.igc",
+            "match": "^(.*)$",
+            "captures": {
+                "1": {
+                    "name": "invalid.igc"
+                }
+            }
         }
     ],
     "repository": {
-        "records": {
+        "ijFields": {
             "patterns": [
                 {
-                    "match": "^(A)([A-Z]{3})([^\\-]*)(-.*)?$",
-                    "name": "record.a.igc",
+                    "match": "(\\d{2})(\\d{2})([A-Z]{3})",
                     "captures": {
                         "1": {
-                            "name": "keyword.control.igc"
+                            "name": "storage.type.igc"
                         },
                         "2": {
-                            "name": "entity.name.igc"
+                            "name": "string.quoted.igc"
                         },
                         "3": {
-                            "name": "storage.type.igc"
-                        },
-                        "4": {
-                            "name": "string.quoted.igc"
-                        }
-                    }
-                },
-                {
-                    "match": "^(B)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])([AV])(\\d{5}|-\\d{4})(\\d{5}|-\\d{4})(.*)$",
-                    "name": "record.b.igc",
-                    "captures": {
-                        "1": {
-                            "name": "keyword.control.igc"
-                        },
-                        "2": {
-                            "name": "storage.type.igc"
-                        },
-                        "3": {
-                            "name": "string.quoted.igc"
-                        },
-                        "4": {
-                            "name": "variable.name.igc"
-                        },
-                        "5": {
-                            "name": "storage.type.igc"
-                        },
-                        "6": {
-                            "name": "string.quoted.igc"
-                        },
-                        "7": {
-                            "name": "variable.name.igc"
-                        },
-                        "8": {
-                            "name": "entity.name.igc"
-                        },
-                        "9": {
-                            "name": "storage.type.igc"
-                        },
-                        "10": {
-                            "name": "string.quoted.igc"
-                        },
-                        "11": {
-                            "name": "variable.name.igc"
-                        },
-                        "12": {
-                            "name": "entity.name.igc"
-                        },
-                        "13": {
-                            "name": "entity.name.igc"
-                        },
-                        "14": {
-                            "name": "storage.type.igc"
-                        },
-                        "15": {
-                            "name": "string.quoted.igc"
-                        },
-                        "16": {
                             "name": "variable.name.igc"
                         }
                     }
                 },
                 {
-                    "match": "^(C)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{4})(\\d{2})(.*)$",
-                    "name": "record.c.line1.igc",
-                    "captures": {
-                        "1": {
-                            "name": "keyword.control.igc"
-                        },
-                        "2": {
-                            "name": "variable.name.igc"
-                        },
-                        "3": {
-                            "name": "string.quoted.igc"
-                        },
-                        "4": {
-                            "name": "storage.type.igc"
-                        },
-                        "5": {
-                            "name": "storage.type.igc"
-                        },
-                        "6": {
-                            "name": "string.quoted.igc"
-                        },
-                        "7": {
-                            "name": "variable.name.igc"
-                        },
-                        "8": {
-                            "name": "variable.name.igc"
-                        },
-                        "9": {
-                            "name": "string.quoted.igc"
-                        },
-                        "10": {
-                            "name": "storage.type.igc"
-                        },
-                        "11": {
-                            "name": "entity.name.igc"
-                        },
-                        "12": {
-                            "name": "storage.type.igc"
-                        }
-                    }
-                },
-                {
-                    "match": "^(C)(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])(.*)$",
-                    "name": "record.c.point.igc",
-                    "captures": {
-                        "1": {
-                            "name": "keyword.control.igc"
-                        },
-                        "2": {
-                            "name": "storage.type.igc"
-                        },
-                        "3": {
-                            "name": "string.quoted.igc"
-                        },
-                        "4": {
-                            "name": "variable.name.igc"
-                        },
-                        "5": {
-                            "name": "entity.name.igc"
-                        },
-                        "6": {
-                            "name": "storage.type.igc"
-                        },
-                        "7": {
-                            "name": "string.quoted.igc"
-                        },
-                        "8": {
-                            "name": "variable.name.igc"
-                        },
-                        "9": {
-                            "name": "entity.name.igc"
-                        },
-                        "10": {
-                            "name": "entity.name.igc"
-                        }
-                    }
-                },
-                {
-                    "match": "^(E)(\\d{2})(\\d{2})(\\d{2})(.{3})(.*)$",
-                    "name": "record.e.igc",
-                    "captures": {
-                        "1": {
-                            "name": "keyword.control.igc"
-                        },
-                        "2": {
-                            "name": "storage.type.igc"
-                        },
-                        "3": {
-                            "name": "string.quoted.igc"
-                        },
-                        "4": {
-                            "name": "variable.name.igc"
-                        },
-                        "5": {
-                            "name": "entity.name.igc"
-                        },
-                        "6": {
-                            "name": "storage.type.igc"
-                        }
-                    }
-                },
-                {
-                    "name": "record.f.igc",
-                    "begin": "^(F)(\\d{2})",
-                    "end": "$",
-                    "beginCaptures": {
-                        "1": {
-                            "name": "keyword.control.igc"
-                        },
-                        "2": {
-                            "name": "entity.name.igc"
-                        }
-                    },
-                    "patterns": [
-                        {
-                            "match": "(\\d{2})(\\d{2})",
-                            "captures": {
-                                "1": {
-                                    "name": "storage.type.igc"
-                                },
-                                "2": {
-                                    "name": "string.quoted.igc"
-                                }
-                            }
-                        },
-                        {
-                            "match": "(\\d{2})",
-                            "captures": {
-                                "1": {
-                                    "name": "storage.type.igc"
-                                }
-                            }
-                        },
-                        {
-                            "match": "(.*)",
-                            "captures": {
-                                "1": {
-                                    "name": "invalid.igc"
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "match": "^(G)(.*)$",
-                    "name": "record.g.igc",
-                    "captures": {
-                        "1": {
-                            "name": "keyword.control.igc"
-                        },
-                        "2": {
-                            "name": "entity.name.igc"
-                        }
-                    }
-                },
-                {
-                    "match": "^(H)(F)(DTE)(\\d{2})(\\d{2})(\\d{2})(.*)$",
-                    "name": "record.h.hfdte.igc",
-                    "captures": {
-                        "1": {
-                            "name": "keyword.control.igc"
-                        },
-                        "2": {
-                            "name": "entity.name.igc"
-                        },
-                        "3": {
-                            "name": "storage.type.igc"
-                        },
-                        "4": {
-                            "name": "variable.name.igc"
-                        },
-                        "5": {
-                            "name": "string.quoted.igc"
-                        },
-                        "6": {
-                            "name": "storage.type.igc"
-                        },
-                        "7": {
-                            "name": "invalid.igc"
-                        }
-                    }
-                },
-                {
-                    "match": "^(H)(F)(FXA)(\\d+)(.*)$",
-                    "name": "record.h.hffxa.igc",
-                    "captures": {
-                        "1": {
-                            "name": "keyword.control.igc"
-                        },
-                        "2": {
-                            "name": "entity.name.igc"
-                        },
-                        "3": {
-                            "name": "storage.type.igc"
-                        },
-                        "4": {
-                            "name": "string.quoted.igc"
-                        },
-                        "5": {
-                            "name": "invalid.igc"
-                        }
-                    }
-                },
-                {
-                    "match": "^(H)([FO])([0-9A-Z]{3})([^:]*)(:)?(.*)$",
-                    "name": "record.h.igc",
-                    "captures": {
-                        "1": {
-                            "name": "keyword.control.igc"
-                        },
-                        "2": {
-                            "name": "entity.name.igc"
-                        },
-                        "3": {
-                            "name": "storage.type.igc"
-                        },
-                        "4": {
-                            "name": "string.quoted.igc"
-                        },
-                        "5": {
-                            "name": "variable.name.igc"
-                        },
-                        "6": {
-                            "name": "storage.type.igc"
-                        }
-                    }
-                },
-                {
-                    "name": "record.i.igc",
-                    "begin": "^(I)(\\d{2})",
-                    "end": "$",
-                    "beginCaptures": {
-                        "1": {
-                            "name": "keyword.control.igc"
-                        },
-                        "2": {
-                            "name": "entity.name.igc"
-                        }
-                    },
-                    "patterns": [
-                        {
-                            "match": "(\\d{2})(\\d{2})([A-Z]{3})",
-                            "captures": {
-                                "1": {
-                                    "name": "storage.type.igc"
-                                },
-                                "2": {
-                                    "name": "string.quoted.igc"
-                                },
-                                "3": {
-                                    "name": "variable.name.igc"
-                                }
-                            }
-                        },
-                        {
-                            "match": "(.*)",
-                            "captures": {
-                                "1": {
-                                    "name": "invalid.igc"
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "record.j.igc",
-                    "begin": "^(J)(\\d{2})",
-                    "end": "$",
-                    "beginCaptures": {
-                        "1": {
-                            "name": "keyword.control.igc"
-                        },
-                        "2": {
-                            "name": "entity.name.igc"
-                        }
-                    },
-                    "patterns": [
-                        {
-                            "match": "(\\d{2})(\\d{2})([A-Z]{3})",
-                            "captures": {
-                                "1": {
-                                    "name": "storage.type.igc"
-                                },
-                                "2": {
-                                    "name": "string.quoted.igc"
-                                },
-                                "3": {
-                                    "name": "variable.name.igc"
-                                }
-                            }
-                        },
-                        {
-                            "match": "(.*)",
-                            "captures": {
-                                "1": {
-                                    "name": "invalid.igc"
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "match": "^(K)(.*)$",
-                    "name": "record.k.igc",
-                    "captures": {
-                        "1": {
-                            "name": "keyword.control.igc"
-                        },
-                        "2": {
-                            "name": "entity.name.igc"
-                        }
-                    }
-                },
-                {
-                    "match": "^(L)([A-Z]{3})(.*)$",
-                    "name": "record.l.igc",
-                    "captures": {
-                        "1": {
-                            "name": "keyword.control.igc"
-                        },
-                        "2": {
-                            "name": "entity.name.igc"
-                        },
-                        "3": {
-                            "name": "comment.igc"
-                        }
-                    }
-                },
-                {
-                    "name": "record.invalid.igc",
-                    "match": "^(.*)$",
+                    "match": "(.*)",
                     "captures": {
                         "1": {
                             "name": "invalid.igc"

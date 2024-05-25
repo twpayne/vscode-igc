@@ -166,20 +166,7 @@
 	}
 	patterns: [
 		{
-			match: "(\\d{2})(\\d{2})([A-Z]{3})"
-			captures: {
-				for i, value in ["2", "3", "4"] {
-					"\(i+1)": #styles[value]
-				}
-			}
-		},
-		{
-			match: "(.*)"
-			captures: {
-				for i, value in ["invalid"] {
-					"\(i+1)": #styles[value]
-				}
-			}
+			include: "#ijFields"
 		},
 	]
 }
@@ -189,36 +176,47 @@
 	$schema: "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json"
 	name:    "IGC"
 	patterns: [
+		#simpleRecordPatterns.a,
+		#simpleRecordPatterns.b,
+		#simpleRecordPatterns.cFirstLine,
+		#simpleRecordPatterns.cPoint,
+		#simpleRecordPatterns.e,
+		#fPattern,
+		#simpleRecordPatterns.g,
+		#simpleRecordPatterns.hfdte,
+		#simpleRecordPatterns.hffxa,
+		#simpleRecordPatterns.h,
+		#ijPattern & {
+			name:  "record.i.igc"
+			begin: "^(I)(\\d{2})"
+		},
+		#ijPattern & {
+			name:  "record.j.igc"
+			begin: "^(J)(\\d{2})"
+		},
+		#simpleRecordPatterns.k,
+		#simpleRecordPatterns.l,
 		{
-			include: "#records"
+			name:  "record.invalid.igc"
+			match: "^(.*)$"
+			captures: {
+				"1": #styles["invalid"]
+			}
 		},
 	]
 	repository: {
-		records: {
+		ijFields: {
 			patterns: [
-				#simpleRecordPatterns.a,
-				#simpleRecordPatterns.b,
-				#simpleRecordPatterns.cFirstLine,
-				#simpleRecordPatterns.cPoint,
-				#simpleRecordPatterns.e,
-				#fPattern,
-				#simpleRecordPatterns.g,
-				#simpleRecordPatterns.hfdte,
-				#simpleRecordPatterns.hffxa,
-				#simpleRecordPatterns.h,
-				#ijPattern & {
-					name:  "record.i.igc"
-					begin: "^(I)(\\d{2})"
-				},
-				#ijPattern & {
-					name:  "record.j.igc"
-					begin: "^(J)(\\d{2})"
-				},
-				#simpleRecordPatterns.k,
-				#simpleRecordPatterns.l,
 				{
-					name:  "record.invalid.igc"
-					match: "^(.*)$"
+					match: "(\\d{2})(\\d{2})([A-Z]{3})"
+					captures: {
+						for i, value in ["2", "3", "4"] {
+							"\(i+1)": #styles[value]
+						}
+					}
+				},
+				{
+					match: "(.*)"
 					captures: {
 						"1": #styles["invalid"]
 					}
