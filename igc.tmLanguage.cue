@@ -1,27 +1,191 @@
-names: {
+// styles defines how fields are styled. The names are arbitrary because fields
+// do not correspond to programming language constructs.
+#styles: {
+	// Named styles.
 	"header": {name: "keyword.control.igc"}
 	"comment": {name: "comment.igc"}
 	"invalid": {name: "invalid.igc"}
 
-	"degree":      names["2"]
-	"minute":      names["3"]
-	"milliminute": names["4"]
-	"hemisphere":  names["1"]
-
-	"year":   names["2"]
-	"month":  names["3"]
-	"day":    names["4"]
-	"hour":   names["2"]
-	"minute": names["3"]
-	"second": names["4"]
-
+	// Generic styles.
 	"1": {name: "entity.name.igc"}
 	"2": {name: "storage.type.igc"}
 	"3": {name: "string.quoted.igc"}
 	"4": {name: "variable.name.igc"}
+
+	// Ordinate styles.
+	"degree":      #styles["2"]
+	"minute":      #styles["3"]
+	"milliminute": #styles["4"]
+	"hemisphere":  #styles["1"]
+
+	// Date and time styles.
+	"year":   #styles["2"]
+	"month":  #styles["3"]
+	"day":    #styles["4"]
+	"hour":   #styles["2"]
+	"minute": #styles["3"]
+	"second": #styles["4"]
+
 }
 
-tmlanguagespec: #TMLanguageSpec & {
+// #simpleRecords are records with no nested structure.
+#simpleRecords: [...{
+	key!:   string
+	name!:  string
+	match!: string
+	fields!: [...string]
+}] & [
+	{
+		key:   "a"
+		name:  "record.a.igc"
+		match: "^(A)([A-Z]{3})([^\\-]*)(-.*)?$"
+		fields: ["header", "1", "2", "3"]
+	},
+	{
+		key:   "b"
+		name:  "record.b.igc"
+		match: "^(B)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])([AV])(\\d{5}|-\\d{4})(\\d{5}|-\\d{4})(.*)$"
+		fields: ["header", "hour", "minute", "second", "degree", "minute", "milliminute", "hemisphere", "degree", "minute", "milliminute", "hemisphere", "1", "2", "3", "4"]
+	},
+	{
+		key:   "cFirstLine"
+		name:  "record.c.line1.igc"
+		match: "^(C)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{4})(\\d{2})(.*)$"
+		fields: ["header", "day", "month", "year", "hour", "minute", "second", "day", "month", "year", "1", "2"]
+	},
+	{
+		key:   "cPoint"
+		name:  "record.c.point.igc"
+		match: "^(C)(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])(.*)$"
+		fields: ["header", "degree", "minute", "milliminute", "hemisphere", "degree", "minute", "milliminute", "hemisphere", "1"]
+	},
+	{
+		key:   "e"
+		name:  "record.e.igc"
+		match: "^(E)(\\d{2})(\\d{2})(\\d{2})(.{3})(.*)$"
+		fields: ["header", "hour", "minute", "second", "1", "2"]
+	},
+	{
+		key:   "hfdte"
+		name:  "record.h.hfdte.igc"
+		match: "^(H)(F)(DTE)(\\d{2})(\\d{2})(\\d{2})(.*)$"
+		fields: ["header", "1", "2", "day", "month", "year", "invalid"]
+	},
+	{
+		key:   "hffxa"
+		name:  "record.h.hffxa.igc"
+		match: "^(H)(F)(FXA)(\\d+)(.*)$"
+		fields: ["header", "1", "2", "3", "invalid"]
+	},
+	{
+		key:   "h"
+		name:  "record.h.igc"
+		match: "^(H)([FO])([0-9A-Z]{3})([^:]*)(:)?(.*)$"
+		fields: ["header", "1", "2", "3", "4", "2"]
+	},
+	{
+		key:   "g"
+		name:  "record.g.igc"
+		match: "^(G)(.*)$"
+		fields: ["header", "1"]
+	},
+	{
+		key:   "k"
+		name:  "record.k.igc"
+		match: "^(K)(.*)$"
+		fields: ["header", "1"]
+	},
+	{
+		key:   "l"
+		name:  "record.l.igc"
+		match: "^(L)([A-Z]{3})(.*)$"
+		fields: ["header", "1", "comment"]
+	},
+]
+
+// #simpleRecordPatterns are the patterns for simple records.
+#simpleRecordPatterns: {
+	for i, simpleRecord in #simpleRecords {
+		"\(simpleRecord.key)": #TMLanguageSpec.#pattern & {
+			name:  simpleRecord.name
+			match: simpleRecord.match
+			captures: {
+				for j, field in simpleRecord.fields {
+					"\(j+1)": #styles[field]
+				}
+			}
+		}
+	}
+}
+
+// #fPattern is the pattern for F records.
+#fPattern: #TMLanguageSpec.#pattern & {
+	name:  "record.f.igc"
+	begin: "^(F)(\\d{2})"
+	end:   "$"
+	beginCaptures: {
+		for i, value in ["header", "1"] {
+			"\(i+1)": #styles[value]
+		}
+	}
+	patterns: [
+		{
+			match: "(\\d{2})(\\d{2})"
+			captures: {
+				for i, value in ["2", "3"] {
+					"\(i+1)": #styles[value]
+				}
+			}
+		},
+		{
+			match: "(\\d{2})"
+			captures: {
+				for i, value in ["2"] {
+					"\(i+1)": #styles[value]
+				}
+			}
+		},
+		{
+			match: "(.*)"
+			captures: {
+				for i, value in ["invalid"] {
+					"\(i+1)": #styles[value]
+				}
+			}
+		},
+	]
+}
+
+// #ijPattern is the pattern for I and J records.
+#ijPattern: #TMLanguageSpec.#pattern & {
+	end: "$"
+	beginCaptures: {
+		for i, value in ["header", "1"] {
+			"\(i+1)": #styles[value]
+		}
+	}
+	patterns: [
+		{
+			match: "(\\d{2})(\\d{2})([A-Z]{3})"
+			captures: {
+				for i, value in ["2", "3", "4"] {
+					"\(i+1)": #styles[value]
+				}
+			}
+		},
+		{
+			match: "(.*)"
+			captures: {
+				for i, value in ["invalid"] {
+					"\(i+1)": #styles[value]
+				}
+			}
+		},
+	]
+}
+
+// The top-level struct.
+#TMLanguageSpec & {
 	$schema: "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json"
 	name:    "IGC"
 	patterns: [
@@ -32,187 +196,35 @@ tmlanguagespec: #TMLanguageSpec & {
 	repository: {
 		records: {
 			patterns: [
-				{
-					name:  "record.a.igc"
-					match: "^(A)([A-Z]{3})([^\\-]*)(-.*)?$"
-					captures: {
-						for i, value in ["header", "1", "2", "3"] {
-							"\(i+1)": names[value]
-						}
-					}
-				},
-				{
-					name:  "record.b.igc"
-					match: "^(B)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])([AV])(\\d{5}|-\\d{4})(\\d{5}|-\\d{4})(.*)$"
-					captures: {
-						for i, value in ["header", "hour", "minute", "second", "degree", "minute", "milliminute", "hemisphere", "degree", "minute", "milliminute", "hemisphere", "1", "2", "3", "4"] {
-							"\(i+1)": names[value]
-						}
-					}
-				},
-				{
-					name:  "record.c.line1.igc"
-					match: "^(C)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{4})(\\d{2})(.*)$"
-					captures: {
-						for i, value in ["header", "day", "month", "year", "hour", "minute", "second", "day", "month", "year", "1", "2"] {
-							"\(i+1)": names[value]
-						}
-					}
-				},
-				{
-					name:  "record.c.point.igc"
-					match: "^(C)(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])(.*)$"
-					captures: {
-						for i, value in ["header", "degree", "minute", "milliminute", "hemisphere", "degree", "minute", "milliminute", "hemisphere", "1"] {
-							"\(i+1)": names[value]
-						}
-					}
-				},
-				{
-					name:  "record.e.igc"
-					match: "^(E)(\\d{2})(\\d{2})(\\d{2})(.{3})(.*)$"
-					captures: {
-						for i, value in ["header", "hour", "minute", "second", "1", "2"] {
-							"\(i+1)": names[value]
-						}
-					}
-				},
-				{
-					name:  "record.f.igc"
-					begin: "^(F)(\\d{2})"
-					beginCaptures: {
-						for i, value in ["header", "1"] {
-							"\(i+1)": names[value]
-						}
-					}
-					patterns: [
-						{
-							match: "(\\d{2})(\\d{2})"
-							captures: {
-								for i, value in ["2", "3"] {
-									"\(i+1)": names[value]
-								}
-							}
-						},
-						{
-							match: "(\\d{2})"
-							captures: {
-								for i, value in ["2"] {
-									"\(i+1)": names[value]
-								}
-							}
-						},
-						{
-							match: "(.*)"
-							captures: {
-								for i, value in ["invalid"] {
-									"\(i+1)": names[value]
-								}
-							}
-						},
-					]
-					end: "$"
-				},
-				{
-					name:  "record.h.hfdte.igc"
-					match: "^(H)(F)(DTE)(\\d{2})(\\d{2})(\\d{2})(.*)$"
-					captures: {
-						for i, value in ["header", "1", "2", "day", "month", "year", "invalid"] {
-							"\(i+1)": names[value]
-						}
-					}
-				},
-				{
-					name:  "record.h.hffxa.igc"
-					match: "^(H)(F)(FXA)(\\d+)(.*)$"
-					captures: {
-						for i, value in ["header", "1", "2", "3", "invalid"] {
-							"\(i+1)": names[value]
-						}
-					}
-				},
-				{
-					name:  "record.h.igc"
-					match: "^(H)([FO])([0-9A-Z]{3})([^:]*)(:)?(.*)$"
-					captures: {
-						for i, value in ["header", "1", "2", "3", "4", "2"] {
-							"\(i+1)": names[value]
-						}
-					}
-				},
-				{
-					name:  "record.g.igc"
-					match: "^(G)(.*)$"
-					captures: {
-						for i, value in ["header", "1"] {
-							"\(i+1)": names[value]
-						}
-					}
-				},
-				ijrecord & {
+				#simpleRecordPatterns.a,
+				#simpleRecordPatterns.b,
+				#simpleRecordPatterns.cFirstLine,
+				#simpleRecordPatterns.cPoint,
+				#simpleRecordPatterns.e,
+				#fPattern,
+				#simpleRecordPatterns.g,
+				#simpleRecordPatterns.hfdte,
+				#simpleRecordPatterns.hffxa,
+				#simpleRecordPatterns.h,
+				#ijPattern & {
 					name:  "record.i.igc"
 					begin: "^(I)(\\d{2})"
 				},
-				ijrecord & {
+				#ijPattern & {
 					name:  "record.j.igc"
 					begin: "^(J)(\\d{2})"
 				},
-				{
-					name:  "record.k.igc"
-					match: "^(K)(.*)$"
-					captures: {
-						for i, value in ["header", "1"] {
-							"\(i+1)": names[value]
-						}
-					}
-				},
-				{
-					name:  "record.l.igc"
-					match: "^(L)([A-Z]{3})(.*)$"
-					captures: {
-						for i, value in ["header", "1", "comment"] {
-							"\(i+1)": names[value]
-						}
-					}
-				},
+				#simpleRecordPatterns.k,
+				#simpleRecordPatterns.l,
 				{
 					name:  "record.invalid.igc"
 					match: "^(.*)$"
 					captures: {
-						for i, value in ["invalid"] {
-							"\(i+1)": names[value]
-						}
+						"1": #styles["invalid"]
 					}
 				},
 			]
 		}
 	}
 	scopeName: "source.igc"
-}
-
-ijrecord: {
-	beginCaptures: {
-		for i, value in ["header", "1"] {
-			"\(i+1)": names[value]
-		}
-	}
-	patterns: [
-		{
-			match: "(\\d{2})(\\d{2})([A-Z]{3})"
-			captures: {
-				for i, value in ["2", "3", "4"] {
-					"\(i+1)": names[value]
-				}
-			}
-		},
-		{
-			match: "(.*)"
-			captures: {
-				for i, value in ["invalid"] {
-					"\(i+1)": names[value]
-				}
-			}
-		},
-	]
-	end: "$"
 }
