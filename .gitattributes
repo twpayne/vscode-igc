@@ -1,2 +1,4 @@
 *.IGC text eol=crlf
 *.igc text eol=crlf
+/syntaxes/igc.tmLanguage.json linguist-generated
+/tmlanguage.cue linguist-generated
