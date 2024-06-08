@@ -16,6 +16,10 @@ Marketplace](https://marketplace.visualstudio.com/items?itemName=twpayne.vscode-
 
 ## Release Notes
 
+### 0.0.3
+
+* Fix highlighting of milliminutes.
+
 ### 0.0.2
 
 * Add highlighting of invalid records.
