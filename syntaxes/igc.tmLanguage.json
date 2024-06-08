@@ -21,7 +21,7 @@
             }
         },
         {
-            "match": "^(B)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])([AV])(\\d{5}|-\\d{4})(\\d{5}|-\\d{4})(.*)$",
+            "match": "^(B)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{5})([NS])(\\d{3})(\\d{5})([EW])([AV])(\\d{5}|-\\d{4})(\\d{5}|-\\d{4})(.*)$",
             "name": "record.b.igc",
             "captures": {
                 "1": {
@@ -43,34 +43,28 @@
                     "name": "string.quoted.igc"
                 },
                 "7": {
-                    "name": "variable.name.igc"
+                    "name": "entity.name.igc"
                 },
                 "8": {
-                    "name": "entity.name.igc"
+                    "name": "storage.type.igc"
                 },
                 "9": {
-                    "name": "storage.type.igc"
+                    "name": "string.quoted.igc"
                 },
                 "10": {
-                    "name": "string.quoted.igc"
+                    "name": "entity.name.igc"
                 },
                 "11": {
-                    "name": "variable.name.igc"
-                },
-                "12": {
-                    "name": "entity.name.igc"
-                },
-                "13": {
-                    "name": "entity.name.igc"
-                },
-                "14": {
                     "name": "storage.type.igc"
                 },
-                "15": {
+                "12": {
                     "name": "string.quoted.igc"
                 },
-                "16": {
+                "13": {
                     "name": "variable.name.igc"
+                },
+                "14": {
+                    "name": "entity.name.igc"
                 }
             }
         },
@@ -117,7 +111,7 @@
             }
         },
         {
-            "match": "^(C)(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])(.*)$",
+            "match": "^(C)(\\d{2})(\\d{5})([NS])(\\d{3})(\\d{5})([EW])(.*)$",
             "name": "record.c.point.igc",
             "captures": {
                 "1": {
@@ -130,24 +124,18 @@
                     "name": "string.quoted.igc"
                 },
                 "4": {
-                    "name": "variable.name.igc"
+                    "name": "entity.name.igc"
                 },
                 "5": {
-                    "name": "entity.name.igc"
-                },
-                "6": {
                     "name": "storage.type.igc"
                 },
-                "7": {
+                "6": {
                     "name": "string.quoted.igc"
                 },
-                "8": {
-                    "name": "variable.name.igc"
-                },
-                "9": {
+                "7": {
                     "name": "entity.name.igc"
                 },
-                "10": {
+                "8": {
                     "name": "entity.name.igc"
                 }
             }

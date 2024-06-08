@@ -15,7 +15,6 @@
 	// Ordinate styles.
 	"degree":      #styles["2"]
 	"minute":      #styles["3"]
-	"milliminute": #styles["4"]
 	"hemisphere":  #styles["1"]
 
 	// Date and time styles.
@@ -44,8 +43,8 @@
 	{
 		key:   "b"
 		name:  "record.b.igc"
-		match: "^(B)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])([AV])(\\d{5}|-\\d{4})(\\d{5}|-\\d{4})(.*)$"
-		fields: ["header", "hour", "minute", "second", "degree", "minute", "milliminute", "hemisphere", "degree", "minute", "milliminute", "hemisphere", "1", "2", "3", "4"]
+		match: "^(B)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{5})([NS])(\\d{3})(\\d{5})([EW])([AV])(\\d{5}|-\\d{4})(\\d{5}|-\\d{4})(.*)$"
+		fields: ["header", "hour", "minute", "second", "degree", "minute", "hemisphere", "degree", "minute", "hemisphere", "2", "3", "4", "1"]
 	},
 	{
 		key:   "cFirstLine"
@@ -56,8 +55,8 @@
 	{
 		key:   "cPoint"
 		name:  "record.c.point.igc"
-		match: "^(C)(\\d{2})(\\d{2})(\\d{3})([NS])(\\d{3})(\\d{2})(\\d{3})([EW])(.*)$"
-		fields: ["header", "degree", "minute", "milliminute", "hemisphere", "degree", "minute", "milliminute", "hemisphere", "1"]
+		match: "^(C)(\\d{2})(\\d{5})([NS])(\\d{3})(\\d{5})([EW])(.*)$"
+		fields: ["header", "degree", "minute", "hemisphere", "degree", "minute", "hemisphere", "1"]
 	},
 	{
 		key:   "e"
