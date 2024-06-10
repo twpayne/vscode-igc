@@ -141,6 +141,21 @@
             }
         },
         {
+            "match": "^(D)(\\d)(.{4})$",
+            "name": "record.d.igc",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "entity.name.igc"
+                },
+                "3": {
+                    "name": "storage.type.igc"
+                }
+            }
+        },
+        {
             "match": "^(E)(\\d{2})(\\d{2})(\\d{2})(.{3})(.*)$",
             "name": "record.e.igc",
             "captures": {

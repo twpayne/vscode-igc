@@ -59,6 +59,12 @@
 		fields: ["header", "degree", "minute", "hemisphere", "degree", "minute", "hemisphere", "1"]
 	},
 	{
+		key:   "d"
+		name:  "record.d.igc"
+		match: "^(D)(\\d)(.{4})$"
+		fields: ["header", "1", "2"]
+	},
+	{
 		key:   "e"
 		name:  "record.e.igc"
 		match: "^(E)(\\d{2})(\\d{2})(\\d{2})(.{3})(.*)$"
@@ -179,6 +185,7 @@
 		#simpleRecordPatterns.b,
 		#simpleRecordPatterns.cFirstLine,
 		#simpleRecordPatterns.cPoint,
+		#simpleRecordPatterns.d,
 		#simpleRecordPatterns.e,
 		#fPattern,
 		#simpleRecordPatterns.g,
