@@ -16,6 +16,10 @@ Marketplace](https://marketplace.visualstudio.com/items?itemName=twpayne.vscode-
 
 ## Release Notes
 
+### 0.0.4
+
+* Add highlighting of D records.
+
 ### 0.0.3
 
 * Fix highlighting of milliminutes.
