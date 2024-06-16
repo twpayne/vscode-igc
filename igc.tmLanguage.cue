@@ -56,7 +56,7 @@
 		key:   "cPoint"
 		name:  "record.c.point.igc"
 		match: "^(C)(\\d{2})(\\d{5})([NS])(\\d{3})(\\d{5})([EW])(.*)$"
-		fields: ["header", "degree", "minute", "hemisphere", "degree", "minute", "hemisphere", "1"]
+		fields: ["header", "degree", "minute", "hemisphere", "degree", "minute", "hemisphere", "2"]
 	},
 	{
 		key:   "d"
