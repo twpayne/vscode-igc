@@ -16,6 +16,10 @@ Marketplace](https://marketplace.visualstudio.com/items?itemName=twpayne.vscode-
 
 ## Release Notes
 
+### 0.0.6
+
+* Highlight timestamps consistently in B, F, and K records.
+
 ### 0.0.5
 
 * Improve highlighting of C records.
