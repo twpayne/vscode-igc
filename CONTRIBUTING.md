@@ -28,9 +28,21 @@ $ make fmt vet
 
 ## Releases
 
+### Preparation
+
 1. Bump the version number in `package.json`.
 2. Add the release notes to `README.md`.
 3. Tag the new version with `git tag vX.Y.Z`.
-4. Follow the instructions for [publishing Visual Studio Code
-   extensions](https://code.visualstudio.com/api/working-with-extensions/publishing-extension).
-5. Once the publishing is successful, push the tag to GitHub.
+4. Create the package with `vsce package`.
+
+### Publishing
+
+Follow the instructions for [publishing Visual Studio Code
+extensions](https://code.visualstudio.com/api/working-with-extensions/publishing-extension).
+
+1. If necessary, create a new Personal Access Token in the Azure DevOps
+organization is `https://twpayne.visualstudio.com/vscode-igc`.
+2. Run `vsce login twpayne`.
+3. Run `vsce publish`.
+
+Once the publishing is successful, push the tag to GitHub.
