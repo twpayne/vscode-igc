@@ -36,3 +36,7 @@ Marketplace](https://marketplace.visualstudio.com/items?itemName=twpayne.vscode-
 ### 0.0.1
 
 * Initial release.
+
+## License
+
+MIT
