@@ -13,9 +13,9 @@
 	"4": {name: "variable.name.igc"}
 
 	// Ordinate styles.
-	"degree":      #styles["2"]
-	"minute":      #styles["3"]
-	"hemisphere":  #styles["1"]
+	"degree":     #styles["2"]
+	"minute":     #styles["3"]
+	"hemisphere": #styles["1"]
 
 	// Date and time styles.
 	"year":   #styles["2"]
@@ -97,8 +97,8 @@
 	{
 		key:   "k"
 		name:  "record.k.igc"
-		match: "^(K)(.*)$"
-		fields: ["header", "1"]
+		match: "^(K)(\\d{2})(\\d{2})(\\d{2})(.*)$"
+		fields: ["header", "hour", "minute", "second", "1"]
 	},
 	{
 		key:   "l"
@@ -126,10 +126,10 @@
 // #fPattern is the pattern for F records.
 #fPattern: #TMLanguageSpec.#pattern & {
 	name:  "record.f.igc"
-	begin: "^(F)(\\d{2})"
+	begin: "^(F)(\\d{2})(\\d{2})(\\d{2})(\\d{2})"
 	end:   "$"
 	beginCaptures: {
-		for i, value in ["header", "1"] {
+		for i, value in ["header", "hour", "minute", "second", "1"] {
 			"\(i+1)": #styles[value]
 		}
 	}
