@@ -41,7 +41,8 @@ Follow the instructions for [publishing Visual Studio Code
 extensions](https://code.visualstudio.com/api/working-with-extensions/publishing-extension).
 
 1. If necessary, create a new Personal Access Token in the Azure DevOps
-organization is `https://twpayne.visualstudio.com/vscode-igc`.
+organization is `https://twpayne.visualstudio.com/vscode-igc`. Personal Access
+Tokens are managed in the "User Settings" menu.
 2. Run `vsce login twpayne`.
 3. Run `vsce publish`.
 
