@@ -106,6 +106,12 @@
 		match: "^(L)([A-Z]{3})(.*)$"
 		fields: ["header", "1", "comment"]
 	},
+	{
+		key:   "n"
+		name:  "record.n.igc"
+		match: "^(N)(\\d{2})(\\d{2})(\\d{2})(.*)$"
+		fields: ["header", "hour", "minute", "second", "1"]
+	},
 ]
 
 // #simpleRecordPatterns are the patterns for simple records.
@@ -161,8 +167,8 @@
 	]
 }
 
-// #ijPattern is the pattern for I and J records.
-#ijPattern: #TMLanguageSpec.#pattern & {
+// #ijmPattern is the pattern for I, J, and M records.
+#ijmPattern: #TMLanguageSpec.#pattern & {
 	end: "$"
 	beginCaptures: {
 		for i, value in ["header", "1"] {
@@ -171,7 +177,7 @@
 	}
 	patterns: [
 		{
-			include: "#ijFields"
+			include: "#ijmFields"
 		},
 	]
 }
@@ -192,16 +198,21 @@
 		#simpleRecordPatterns.hfdte,
 		#simpleRecordPatterns.hffxa,
 		#simpleRecordPatterns.h,
-		#ijPattern & {
+		#ijmPattern & {
 			name:  "record.i.igc"
 			begin: "^(I)(\\d{2})"
 		},
-		#ijPattern & {
+		#ijmPattern & {
 			name:  "record.j.igc"
 			begin: "^(J)(\\d{2})"
 		},
 		#simpleRecordPatterns.k,
 		#simpleRecordPatterns.l,
+		#ijmPattern & {
+			name:  "record.m.igc"
+			begin: "^(M)(\\d{2})"
+		},
+		#simpleRecordPatterns.n,
 		{
 			name:  "record.invalid.igc"
 			match: "^(.*)$"
@@ -211,7 +222,7 @@
 		},
 	]
 	repository: {
-		ijFields: {
+		ijmFields: {
 			patterns: [
 				{
 					match: "(\\d{2})(\\d{2})([A-Z]{3})"

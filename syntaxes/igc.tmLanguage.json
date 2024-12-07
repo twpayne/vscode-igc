@@ -328,7 +328,7 @@
             },
             "patterns": [
                 {
-                    "include": "#ijFields"
+                    "include": "#ijmFields"
                 }
             ]
         },
@@ -346,7 +346,7 @@
             },
             "patterns": [
                 {
-                    "include": "#ijFields"
+                    "include": "#ijmFields"
                 }
             ]
         },
@@ -387,6 +387,45 @@
             }
         },
         {
+            "name": "record.m.igc",
+            "begin": "^(M)(\\d{2})",
+            "end": "$",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "entity.name.igc"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#ijmFields"
+                }
+            ]
+        },
+        {
+            "match": "^(N)(\\d{2})(\\d{2})(\\d{2})(.*)$",
+            "name": "record.n.igc",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.igc"
+                },
+                "2": {
+                    "name": "storage.type.igc"
+                },
+                "3": {
+                    "name": "string.quoted.igc"
+                },
+                "4": {
+                    "name": "variable.name.igc"
+                },
+                "5": {
+                    "name": "entity.name.igc"
+                }
+            }
+        },
+        {
             "name": "record.invalid.igc",
             "match": "^(.*)$",
             "captures": {
@@ -397,7 +436,7 @@
         }
     ],
     "repository": {
-        "ijFields": {
+        "ijmFields": {
             "patterns": [
                 {
                     "match": "(\\d{2})(\\d{2})([A-Z]{3})",
