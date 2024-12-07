@@ -45,4 +45,4 @@ organization is `https://twpayne.visualstudio.com/vscode-igc`.
 2. Run `vsce login twpayne`.
 3. Run `vsce publish`.
 
-Once the publishing is successful, push the tag to GitHub.
+Once publishing is successful, push the tag to GitHub.
