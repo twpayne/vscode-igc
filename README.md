@@ -2,7 +2,7 @@
 
 This VS Code extension provides support for IGC files, as described in Appendix
 A of the [Technical specification for IGC-approved GNSS flight
-recorders](https://www.fai.org/sites/default/files/igc_fr_specification_with_al8_2023-2-1_0.pdf).
+recorders](https://www.fai.org/page/igc-approved-flight-recorders).
 
 Install it from the [Visual Studio Code
 Marketplace](https://marketplace.visualstudio.com/items?itemName=twpayne.vscode-igc).
