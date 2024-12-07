@@ -47,13 +47,13 @@
 		fields: ["header", "hour", "minute", "second", "degree", "minute", "hemisphere", "degree", "minute", "hemisphere", "2", "3", "4", "1"]
 	},
 	{
-		key:   "cFirstLine"
+		key:   "cDeclaration"
 		name:  "record.c.line1.igc"
 		match: "^(C)(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{4})(\\d{2})(.*)$"
 		fields: ["header", "day", "month", "year", "hour", "minute", "second", "day", "month", "year", "1", "2"]
 	},
 	{
-		key:   "cPoint"
+		key:   "cWaypoint"
 		name:  "record.c.point.igc"
 		match: "^(C)(\\d{2})(\\d{5})([NS])(\\d{3})(\\d{5})([EW])(.*)$"
 		fields: ["header", "degree", "minute", "hemisphere", "degree", "minute", "hemisphere", "2"]
@@ -183,8 +183,8 @@
 	patterns: [
 		#simpleRecordPatterns.a,
 		#simpleRecordPatterns.b,
-		#simpleRecordPatterns.cFirstLine,
-		#simpleRecordPatterns.cPoint,
+		#simpleRecordPatterns.cDeclaration,
+		#simpleRecordPatterns.cWaypoint,
 		#simpleRecordPatterns.d,
 		#simpleRecordPatterns.e,
 		#fPattern,
